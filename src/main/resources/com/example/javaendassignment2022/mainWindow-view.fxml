@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaendassignment2022.MainWindowController">
+   <Label layoutX="14.0" layoutY="3.0" text="Library system" textFill="WHITE">
+      <font>
+         <Font size="30.0" />
+      </font>
+   </Label>
+   <TabPane fx:id="tabPane" layoutY="40.0" prefHeight="360.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+         <Tab fx:id="tab1" text="Lending/receiving">
+            <content>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <VBox prefHeight="330.0" prefWidth="600.0">
+                        <children>
+                           <Label fx:id="welcomeUserLabel" text="Welcome">
+                              <font>
+                                 <Font size="24.0" />
+                              </font>
+                              <VBox.margin>
+                                 <Insets bottom="10.0" top="10.0" />
+                              </VBox.margin>
+                           </Label>
+                           <HBox prefHeight="265.0" prefWidth="580.0" spacing="15.0">
+                              <children>
+                                 <VBox fx:id="vBoxLendItem" prefHeight="329.0" prefWidth="300.0" spacing="15.0">
+                                    <children>
+                                       <TextField fx:id="textFieldLendItemCode" promptText="Item code" />
+                                       <TextField fx:id="textFieldMemberId" promptText="Member identifier" />
+                                       <Button fx:id="buttonLendItem" mnemonicParsing="false" onAction="#onClickLendItemButton" text="Lend item " textFill="WHITE" />
+                                       <Label fx:id="labelLendItem" text="Label" />
+                                    </children>
+                                    <HBox.margin>
+                                       <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                       <Insets left="15.0" right="40.0" top="15.0" />
+                                    </padding>
+                                 </VBox>
+                                 <VBox fx:id="vBoxReceiveItem" prefHeight="329.0" prefWidth="300.0" spacing="15.0">
+                                    <children>
+                                       <TextField fx:id="textFieldReceiveItemCode" promptText="Item code" />
+                                       <Button fx:id="buttonReceiveItem" mnemonicParsing="false" onAction="#onClickReceiveItemButton" text="Receive item" textFill="WHITE" />
+                                       <Label fx:id="labelreceiveItem" text="Label" />
+                                    </children>
+                                    <HBox.margin>
+                                       <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                       <Insets left="15.0" right="50.0" top="15.0" />
+                                    </padding>
+                                 </VBox>
+                              </children>
+                              <VBox.margin>
+                                 <Insets />
+                              </VBox.margin>
+                           </HBox>
+                        </children>
+                        <padding>
+                           <Insets left="10.0" right="10.0" />
+                        </padding>
+                     </VBox>
+                  </children>
+               </AnchorPane>
+            </content>
+         </Tab>
+         <Tab fx:id="tab2" text="Collection">
+            <content>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <StackPane prefHeight="330.0" prefWidth="600.0">
+                        <children>
+                           <VBox fx:id="vBoxItems" prefHeight="260.0" prefWidth="570.0">
+                              <children>
+                                 <HBox spacing="6.0">
+                                    <children>
+                                       <Label text="Items">
+                                          <font>
+                                             <Font size="24.0" />
+                                          </font>
+                                       </Label>
+                                       <Label text="Search by:">
+                                          <HBox.margin>
+                                             <Insets left="280.0" top="4.0" />
+                                          </HBox.margin>
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                       </Label>
+                                       <TextField fx:id="textFieldSearchItems" prefHeight="26.0" prefWidth="156.0" promptText="Title and Author" />
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                                 <TableView fx:id="tableViewItems" prefHeight="200.0" prefWidth="200.0">
+                                    <columns>
+                                       <TableColumn fx:id="colItemCode" prefWidth="75.0" text="Item code" />
+                                       <TableColumn fx:id="colAvailability" prefWidth="75.0" text="Available" />
+                                       <TableColumn fx:id="colTitle" prefWidth="101.0" text="Title" />
+                                       <TableColumn fx:id="colAuthor" prefWidth="104.0" text="Author" />
+                                    </columns>
+                                 </TableView>
+                                 <HBox prefHeight="70.0" prefWidth="570.0" spacing="15.0">
+                                    <children>
+                                       <Button fx:id="buttonAddItem" mnemonicParsing="false" onAction="#onClickAddItemButton1" text="Add Item " textFill="WHITE" />
+                                       <Button fx:id="buttonEditItem" mnemonicParsing="false" onAction="#onClickEditItemButton" text="Edit Item" textFill="WHITE" />
+                                       <Button fx:id="buttonDeleteItem" mnemonicParsing="false" onAction="#onClickDeleteItemButton" text="Delete Item" textFill="WHITE" />
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets top="15.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                              </children>
+                              <StackPane.margin>
+                                 <Insets />
+                              </StackPane.margin>
+                           </VBox>
+                           <VBox fx:id="vBoxAddItem" prefHeight="200.0" prefWidth="100.0" visible="false">
+                              <children>
+                                 <Label text="Add item">
+                                    <font>
+                                       <Font size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </Label>
+                                 <HBox fx:id="hBoxAddItem" prefHeight="154.0" prefWidth="600.0" spacing="10.0">
+                                    <children>
+                                       <VBox prefHeight="200.0" prefWidth="276.0" spacing="15.0">
+                                          <children>
+                                             <TextField fx:id="textFieldTitle" promptText="Title" />
+                                             <TextField fx:id="textFieldAuthor" layoutX="10.0" layoutY="10.0" promptText="Author" />
+                                          </children>
+                                       </VBox>
+                                       <Label text="Available: ">
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                          <HBox.margin>
+                                             <Insets left="35.0" />
+                                          </HBox.margin>
+                                       </Label>
+                                       <RadioButton fx:id="rButtonYes" mnemonicParsing="false" text="Yes">
+                                          <toggleGroup>
+                                             <ToggleGroup fx:id="tgAddItemAvailability" />
+                                          </toggleGroup></RadioButton>
+                                       <RadioButton fx:id="rButtonNo" layoutX="396.0" layoutY="10.0" mnemonicParsing="false" text="No" toggleGroup="$tgAddItemAvailability" />
+                                    </children>
+                                    <padding>
+                                       <Insets left="15.0" top="15.0" />
+                                    </padding>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                    <children>
+                                       <Button fx:id="buttonAddItem2" mnemonicParsing="false" onAction="#onClickAddItemButton2" text="Add Item" textFill="WHITE" />
+                                       <Button fx:id="buttonCancelAddItem" mnemonicParsing="false" onAction="#onClickCancelAddItemButton" text="Cancel" textFill="WHITE" />
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                           <VBox fx:id="vBoxEditItem" layoutX="25.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" visible="false">
+                              <children>
+                                 <Label text="Edit item">
+                                    <font>
+                                       <Font size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </Label>
+                                 <HBox fx:id="hBoxEditItem" prefHeight="154.0" prefWidth="600.0" spacing="10.0">
+                                    <children>
+                                       <VBox prefHeight="200.0" prefWidth="276.0" spacing="15.0">
+                                          <children>
+                                             <TextField fx:id="textFieldEditTitle" promptText="Title" />
+                                             <TextField fx:id="textFieldEditAuthor" layoutX="10.0" layoutY="10.0" promptText="Author" />
+                                          </children>
+                                       </VBox>
+                                       <Label text="Available: ">
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                          <HBox.margin>
+                                             <Insets left="35.0" />
+                                          </HBox.margin>
+                                       </Label>
+                                       <RadioButton fx:id="rButtonYesEditItem" mnemonicParsing="false" text="Yes">
+                                          <toggleGroup>
+                                             <ToggleGroup fx:id="tgEditItemAvailability" />
+                                          </toggleGroup></RadioButton>
+                                       <RadioButton fx:id="rButtonNoEditItem" layoutX="396.0" layoutY="10.0" mnemonicParsing="false" text="No" toggleGroup="$tgEditItemAvailability" />
+                                    </children>
+                                    <padding>
+                                       <Insets left="15.0" top="15.0" />
+                                    </padding>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                    <children>
+                                       <Button fx:id="buttonUpdateItem" mnemonicParsing="false" onAction="#onClickUpdateItemButton" text="Update Item" textFill="WHITE" />
+                                       <Button fx:id="buttonCancelEditItem" mnemonicParsing="false" onAction="#onClickCancelEditItemButton" text="Cancel" textFill="WHITE" />
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets top="15.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                        </children>
+                        <padding>
+                           <Insets left="15.0" right="15.0" />
+                        </padding>
+                     </StackPane>
+                  </children>
+               </AnchorPane>
+            </content>
+         </Tab>
+         <Tab fx:id="tab3" text="Members">
+            <content>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <StackPane prefHeight="330.0" prefWidth="600.0">
+                        <children>
+                           <VBox fx:id="vBoxMember" prefHeight="200.0" prefWidth="100.0">
+                              <children>
+                                 <HBox spacing="6.0">
+                                    <children>
+                                       <Label text="Members">
+                                          <font>
+                                             <Font size="24.0" />
+                                          </font>
+                                       </Label>
+                                       <Label text="Search by: ">
+                                          <HBox.margin>
+                                             <Insets top="4.0" />
+                                          </HBox.margin>
+                                          <padding>
+                                             <Insets left="230.0" />
+                                          </padding>
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font></Label>
+                                       <TextField fx:id="textFieldSearchMembers" promptText="First name and Last name" />
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin></HBox>
+                                 <TableView fx:id="tableViewMembers" prefHeight="200.0" prefWidth="200.0">
+                                    <columns>
+                                       <TableColumn fx:id="colId" prefWidth="75.0" text="Identifier" />
+                                       <TableColumn fx:id="colFirstName" prefWidth="75.0" text="First name" />
+                                       <TableColumn fx:id="colLastName" prefWidth="75.0" text="Last name" />
+                                       <TableColumn fx:id="colBirthDate" prefWidth="114.0" text="Birth date" />
+                                    </columns>
+                                 </TableView>
+                                 <HBox prefHeight="80.0" prefWidth="570.0" spacing="15.0">
+                                    <children>
+                                       <Button fx:id="buttonAddMember" mnemonicParsing="false" onAction="#onClickAddMemberButton" text="Add member" textFill="WHITE" />
+                                       <Button fx:id="buttonEditMember" mnemonicParsing="false" onAction="#onClickEditMemberButton" text="Edit member" textFill="WHITE" />
+                                       <Button fx:id="buttonDeleteMember" mnemonicParsing="false" onAction="#onClickDeleteMemberButton" text="Delete member" textFill="WHITE" />
+                                    </children>
+                                    <VBox.margin>
+                                       <Insets top="15.0" />
+                                    </VBox.margin>
+                                 </HBox>
+                              </children>
+                              <StackPane.margin>
+                                 <Insets />
+                              </StackPane.margin>
+                              <padding>
+                                 <Insets left="15.0" right="15.0" />
+                              </padding>
+                           </VBox>
+                           <VBox fx:id="vBoxAddMember" prefHeight="200.0" prefWidth="100.0" visible="false">
+                              <children>
+                                 <Label text="Add Member ">
+                                    <font>
+                                       <Font size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </Label>
+                                 <HBox fx:id="membersHBox" prefHeight="154.0" prefWidth="600.0" spacing="15.0">
+                                    <children>
+                                       <VBox prefHeight="200.0" prefWidth="276.0" spacing="15.0">
+                                          <children>
+                                             <TextField fx:id="textFieldFirstName" promptText="First name" />
+                                             <TextField fx:id="textFieldLastName" layoutX="10.0" layoutY="10.0" promptText="Last name" />
+                                          </children>
+                                       </VBox>
+                                       <DatePicker fx:id="datePickerBirthDate" promptText="Birth date" />
+                                    </children>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                    <children>
+                                       <Button fx:id="buttonAddMember2" mnemonicParsing="false" onAction="#onClickAddMemberButton2" text="Add Member" textFill="WHITE" />
+                                       <Button fx:id="buttonCancelAddMember" mnemonicParsing="false" onAction="#onClickCancelAddMemberButton" text="Cancel" textFill="WHITE" />
+                                    </children>
+                                 </HBox>
+                              </children>
+                              <padding>
+                                 <Insets left="15.0" />
+                              </padding>
+                           </VBox>
+                           <VBox fx:id="vBoxEditMember" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" visible="false">
+                              <children>
+                                 <Label text="Edit Member ">
+                                    <font>
+                                       <Font size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </Label>
+                                 <HBox fx:id="membersHBox1" prefHeight="154.0" prefWidth="600.0" spacing="15.0">
+                                    <children>
+                                       <VBox prefHeight="200.0" prefWidth="276.0" spacing="15.0">
+                                          <children>
+                                             <TextField fx:id="textFieldEditFirstName" promptText="First name" />
+                                             <TextField fx:id="textFieldEditLastName" layoutX="10.0" layoutY="10.0" promptText="Last name" />
+                                          </children>
+                                       </VBox>
+                                       <DatePicker fx:id="datePickerEditBirthDate" promptText="Birth date" />
+                                    </children>
+                                 </HBox>
+                                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                    <children>
+                                       <Button fx:id="buttonUpdateMember" mnemonicParsing="false" onAction="#onClickUpdateMemberButton" text="Update member" textFill="WHITE" />
+                                       <Button fx:id="buttonCancelEditMember" mnemonicParsing="false" onAction="#onClickCancelEditMemberButton" text="Cancel" textFill="WHITE" />
+                                    </children>
+                                 </HBox>
+                              </children>
+                              <padding>
+                                 <Insets left="15.0" />
+                              </padding>
+                           </VBox>
+                        </children>
+                     </StackPane>
+                  </children>
+               </AnchorPane>
+            </content>
+         </Tab>
+      </tabs>
+   </TabPane>
+</Pane>

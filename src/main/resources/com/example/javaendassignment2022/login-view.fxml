@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="360.0" spacing="15.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaendassignment2022.LoginController">
+   <children>
+      <Label text="Login">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <TextField fx:id="userNameTextfield" promptText="Username" />
+      <PasswordField fx:id="userPasswordField" promptText="Password" />
+      <HBox prefHeight="32.0" prefWidth="225.0">
+         <children>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="65.0" text="login" textFill="WHITE" />
+            <Label fx:id="labelInvalidUserNameAndPassword" prefHeight="18.0" prefWidth="168.0" text="Label" textFill="RED">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></Label>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="35.0" right="90.0" top="30.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,95 @@
+#loginButton {
+    -fx-background-color: #007ADE;
+    -fx-color-label-visible: white;
+}
+
+#pane {
+    -fx-background-color: black;
+}
+
+.tab-header-background {
+    -fx-background-color: black;
+}
+
+#tabPane {
+    -fx-background-color: #E5E5E5;
+}
+
+/* Lending/receiving tab */
+#vBoxLendItem {
+    -fx-background-color: white;
+}
+
+#vBoxReceiveItem {
+    -fx-background-color: white;
+}
+#buttonReceiveItem {
+    -fx-background-color: #007ADE;
+}
+
+#buttonLendItem {
+    -fx-background-color: #007ADE;
+}
+
+/* Collection tab */
+#hBoxAddItem {
+    -fx-background-color: white;
+}
+
+#hBoxEditItem {
+    -fx-background-color: white;
+}
+
+#buttonAddItem {
+    -fx-background-color: #007ADE;
+}
+
+#buttonEditItem {
+    -fx-background-color: grey;
+}
+
+#buttonDeleteItem {
+    -fx-background-color: red;
+}
+#buttonAddItem2 {
+    -fx-background-color: #007ADE;
+}
+#buttonCancelAddItem {
+    -fx-background-color: grey;
+}
+#buttonUpdateItem {
+    -fx-background-color: #007ADE;
+}
+#buttonCancelEditItem {
+    -fx-background-color: grey;
+}
+
+/* Members tab */
+#buttonAddMember {
+    -fx-background-color: #007ADE;
+}
+
+#buttonEditMember {
+    -fx-background-color: grey;
+}
+
+#buttonDeleteMember {
+    -fx-background-color: red;
+}
+
+#buttonAddMember2 {
+    -fx-background-color: #007ADE;
+}
+
+#buttonCancelAddMember {
+    -fx-background-color: grey;
+}
+
+#buttonUpdateMember {
+    -fx-background-color: #007ADE;
+}
+
+#buttonCancelEditMember {
+    -fx-background-color: grey;
+}
+
